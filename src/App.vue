@@ -11,21 +11,6 @@
     <RouterView />
   </div>
 
-  <div class="absolute right-0 top-0 w-[30%] h-full flex flex-col items-end">
-    <iframe
-      src="http://localhost:5173/widget/my-tribuo-advisor/"
-      class="h-full w-[85%] mx-[5%] mt-[5%] rounded-xl border-2 border-blue-950"
-      :class="displayIFrame ? 'visible' : 'invisible'"
-      :scrolling="true"
-      frameborder="0"
-    ></iframe>
-    <img 
-      src="https://i.imgur.com/eQILJxZ.png"
-      class="w-[15%] mb-2 mr-[4%] mt-2 cursor-pointer hover:scale-105"
-      @click="displayIFrame = !displayIFrame"
-    >
-  </div>
-
 </template>
 
 <script setup lang="ts">
