@@ -14,15 +14,15 @@ function injectInterface(context) {
     let path = "http://localhost:5173/widget/" + context;
 
     const iframeObject = 
-        '<div class="absolute right-0 top-0 w-[30%] h-full flex flex-col items-end">' +
+        '<div id=\'bubo-container\' class="absolute right-0 top-0 w-full md:w-[30%] h-full flex flex-col items-end">' +
             '<iframe id=\'bubo-iframe\'' +
                 'src="' + path + '" ' +
-                'class="invisible h-full w-[85%] mx-[5%] mt-[5%] rounded-xl border-2 border-blue-950" ' +
+                'class="invisible h-full w-full md:mx-[5%] md:mt-[5%] md:rounded-xl md:border-2 md:border-blue-950" ' +
                 'frameborder="0" ' +
             '></iframe>' +
             '<img ' +
                 'src="https://i.imgur.com/eQILJxZ.png" ' +
-                'class="w-[15%] mb-2 mr-[4%] mt-2 cursor-pointer hover:scale-105" ' +
+                'class="bottom-0 w-[60px] mb-2 mr-[2%] md:mr-[4%] mt-2 cursor-pointer hover:scale-105" ' +
                 'onClick="switchIFrameVisibility()"' +
             '>' +
         '</div>';
@@ -34,7 +34,8 @@ function injectInterface(context) {
 function switchIFrameVisibility() {
     displayIFrame = !displayIFrame;
     const buboIFrame = document.querySelector("#bubo-iframe");
-    displayIFrame ? buboIFrame.style.visibility = 'visible' : buboIFrame.style.visibility = 'hidden';
+    const buboContainer = document.querySelector("#bubo-container");
+    displayIFrame ? (buboIFrame.style.visibility = 'visible') : (buboIFrame.style.visibility = 'hidden');
 }
 
 injectInterface('my-tribuo-advisor');
